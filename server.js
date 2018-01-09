@@ -10,7 +10,7 @@ var app = express();
 
 var db = require("./models");
 
-var PORT = 8080;
+var PORT = process.env.PORT || 8080;
 // var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
 
 
@@ -25,7 +25,7 @@ app.use(express.static("public"));
 // Connect to the Mongo DB
 mongoose.Promise = Promise;
 mongoose.connect("mongodb://localhost/News-Scrape" ||
-    "mongodb://heroku_ml3glxph:ref82a984eoueblh2lgepdbgbc@ds247587.mlab.com:47587/heroku_ml3glxph", {});
+    "mongodb://heroku_ml3glxph:ref82a984eoueblh2lgepdbgbc@ds247587.mlab.com:47587/heroku_ml3glxph", { useMongoClient: true });
 
 
 //Routes

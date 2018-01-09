@@ -1,8 +1,22 @@
 {
-  "name": "json",
+  "name": "news",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js"
+  "description": "MONGODB_URI mongodb://heroku_ml3glxph:ref82a984eoueblh2lgepdbgbc@ds247587.mlab.com:47587/heroku_ml3glxph",
+  "main": "server.js",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "body-parser": "^1.18.2",
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0",
+    "morgan": "^1.9.0",
+    "mongoose": "^4.13.9",
+    "request": "^2.83.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -13,12 +27,5 @@
   "bugs": {
     "url": "https://github.com/espeders90/News-Scrape/issues"
   },
-  "homepage": "https://github.com/espeders90/News-Scrape#readme",
-  "dependencies": {
-    "body-parser": "^1.18.2"
-  },
-  "scripts": {
-       "start": "node server.js"
-  }
+  "homepage": "https://github.com/espeders90/News-Scrape#readme"
 }
-
