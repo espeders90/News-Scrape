@@ -4,7 +4,7 @@ var logger = require("morgan");
 var mongoose = require("mongoose");
 var axios = require("axios");
 var cheerio = require("cheerio");
-var logger = require("morgan");
+
 
 var app = express();
 
@@ -30,10 +30,16 @@ mongoose.connect("mongodb://localhost/News-Scrape", {
 
 
 //Routes
+
+// A GET route for scraping the echojs website
 app.get("/scrape", function(req, res) {
+
+    // First, we grab the body of the html with request
     axios.get("http://abcnews.go.com/").then(function(response) {
+        // Then, we load that into cheerio and save it to $ for a shorthand selector
         var $ = cheerio.load(response.data);
 
+        // Now, we grab every h2 within an article tag, and do the following:
         $("article h1").each(function(i, element) {
             //Save
             var result = {};
@@ -58,6 +64,7 @@ app.get("/scrape", function(req, res) {
                     res.json(err);
                 });
         });
+
     });
     res.send("Scrape Complete");
 });
