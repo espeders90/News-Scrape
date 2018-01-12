@@ -11,7 +11,7 @@ var app = express();
 var db = require("./models");
 
 var PORT = process.env.PORT || 8080;
-// var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
 
 
 // Use morgan logger for logging requests
@@ -24,10 +24,10 @@ app.use(express.static("public"));
 // Set mongoose to leverage built in JavaScript ES6 Promises
 // Connect to the Mongo DB
 mongoose.Promise = Promise;
-mongoose.connect("mongodb://localhost/News-Scrape" ||
-    "mongodb://heroku_ml3glxph:ref82a984eoueblh2lgepdbgbc@ds247587.mlab.com:47587/heroku_ml3glxph", { useMongoClient: true });
+// mongoose.connect("mongodb://localhost/News-Scrape" ||
+// "mongodb://heroku_ml3glxph:ref82a984eoueblh2lgepdbgbc@ds247587.mlab.com:47587/heroku_ml3glxph", { useMongoClient: true });
 
-
+mongoose.connect(MONGODB_URI)
 //Routes
 
 // A GET route for scraping the echojs website

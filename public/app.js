@@ -9,11 +9,11 @@ $.getJSON("/articles", function(data) {
 });
 
 // Delete
-// $(document).on("click", "#deletecomment", function() {
-//     // Empty the comments from the comment section
-//     $("#notes").empty();
+$(document).on("click", "#deletecomment", function() {
+    // Empty the comments from the comment section
+    $("#notes").empty();
 
-// })
+})
 
 //  Whenever someone clicks a p tag
 $(document).on("click", "p", function() {
